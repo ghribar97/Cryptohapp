@@ -78,7 +78,7 @@ public class ServerConnector {
         } catch (JSONException e) {
             System.out.println("Could not transform String: " + str + " into JSON!");
             System.out.println(e.toString());
-            return new JSONObject("");   // empty json
+            return new JSONObject();   // empty json
         }
     }
 }

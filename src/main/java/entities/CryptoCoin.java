@@ -14,16 +14,13 @@ public class CryptoCoin implements StockAsset {
 
     @Override
     public double getCurrentPrice(String exchange, String currency) {
-        long date = System.currentTimeMillis();
-        System.out.println("current date: " + date);
-        return this.dataProvider.getStockAssetPrice(this, exchange, currency, date);
+        return this.dataProvider.getCurrentStockAssetPrice(this, exchange, currency);
     }
 
     @Override
     public double getPriceFromDateTime(String date, String exchange, String currency) {
         long date2 = DateManager.getTimestampFromDate(date);
-        System.out.println("old date: " + date2);
-        return this.dataProvider.getStockAssetPrice(this, exchange, currency, date2);
+        return this.dataProvider.getStockAssetPriceFromTimestamp(this, exchange, currency, date2);
     }
 
     @Override
